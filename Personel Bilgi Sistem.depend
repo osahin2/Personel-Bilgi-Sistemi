@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1527264464 source:d:\personel bilgi sistem\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+
