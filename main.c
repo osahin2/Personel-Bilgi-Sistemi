@@ -24,13 +24,13 @@ int main()
     int secim;
     do
     {
-        printf("1. Kayıt Ekle\n");
+        printf("1. Kayit Ekle\n");
         printf("2. Personel Listele\n");
-        printf("3. Kaydı Düzenle\n");
-        printf("4. Tc Kimlik No ile Kayıt Bul\n");
-        printf("5. Isim ile Kayıt Bul\n");
-        printf("6. Kayıt Sil\n");
-        printf("0. Çıkış\n");
+        printf("3. Kaydi DÃ¼zenle\n");
+        printf("4. Tc Kimlik No ile Kayit Bul\n");
+        printf("5. Isim ile Kayit Bul\n");
+        printf("6. Kayit Sil\n");
+        printf("0. Cikis\n");
         scanf("%d",&secim);
 
         switch(secim)
@@ -52,7 +52,7 @@ void KayitEkle()
 {
     FILE *fp;
     fp=fopen("Personel.txt","wb+");
-    printf("Personel İsim:\n");
+    printf("Personel Isim:\n");
     scanf("%s",perE[sayac].Isim);
     fflush(stdin);
     printf("Personel Tc Kimlik No:\n");
@@ -90,14 +90,14 @@ void Duzenle()
     char secim1;
     char Aranan[100];
     Personel perD;
-    printf("Düzenlenecek Personelin Adını Giriniz.");
+    printf("DÃ¼zenlenecek Personelin Adini Giriniz.");
     scanf("%s",Aranan);
         while(fread(&perD,sizeof(perD),1,fp)==1)
     {
         if(strcmp(Aranan,perD.Isim)==0)
         {
             printf("Yeni Bilgiler:\n");
-            printf("İsim:\n");
+            printf("Ãsim:\n");
             scanf("%s",perD.Isim);
             printf("TC:\n");
             scanf("%ld",&perD.TCKimlikNo);
@@ -140,7 +140,7 @@ void IsimKayitBul()
     Personel PerI;
     FILE *fp;
     fp=fopen("Personel.txt","r");
-    printf("Aranacak İsimi Giriniz:\n");
+    printf("Aranacak Isimi Giriniz:\n");
     scanf("%s",GirilenIsim);
     while(fread(&PerI,sizeof(PerI),1,fp)==1)
     {
@@ -164,7 +164,7 @@ void KayitSil()
         Personel PerS;
         int kontrol=0;
 
-        printf("Kaydı silinecek  Personelin TC'sini Giriniz:\n");
+        printf("Kaydi silinecek  Personelin TC'sini Giriniz:\n");
         scanf("%ld",&SilinenTc);
         while(fread(&PerS,sizeof(PerS),1,fp)==1)
         {
@@ -180,14 +180,14 @@ void KayitSil()
 
         if(kontrol!=0)
         {
-            printf("Kayıt Başarıyla Silindi.\n");
-            printf("Başka Kayıt Silmek İstiyor musunuz?<y-Evet/n-Hayır>\n");
+            printf("Kayit Basariyla Silindi.\n");
+            printf("Baska Kayit Silmek Istiyor musunuz?<y-Evet/n-Hayir>\n");
             scanf("%s",secim1);
 
         }
         else
         {
-            printf("Kayıt Bulunamadı!\n");
+            printf("Kayit Bulunamadi!\n");
             break;
         }
 
